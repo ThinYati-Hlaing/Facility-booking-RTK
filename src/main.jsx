@@ -1,14 +1,11 @@
-import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
+import { createRoot } from "react-dom/client";
 import "./style/index.css";
 import App from "./App";
 import React from "react";
-import { store } from "./store/ConfigureStore";
+import FrameProvider from "./provider/FrameProvider";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-    <Provider store={store} >
-      <App />
-    </Provider>
+createRoot(document.getElementById("root")).render(
+  <FrameProvider>
+    <App />
+  </FrameProvider>
 );
-
